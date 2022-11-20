@@ -1,0 +1,6 @@
+controller:
+  tcp:
+    configMapNamespace: "ingress-nginx"
+
+tcp:
+  3306: "default/mariadb-release:3306"
