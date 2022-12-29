@@ -1,0 +1,14 @@
+automountToken: false
+
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: kibana
+      paths:
+        - path: /
+
+kibanaConfig:
+  kibana.yml: |
+    xpack.encryptedSavedObjects.encryptionKey: "dQt6DagMpLw1s5JyoZJAJERPTT25FYoE"
+    

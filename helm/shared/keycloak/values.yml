@@ -1,8 +1,6 @@
 postgresql:
   enabled: false
 
-# TODO: This ingress work how to be able to use path keycloak?
-#       - Should i use host? could be interesting though
 ingress:
   enabled: true
   ingressClassName: nginx
