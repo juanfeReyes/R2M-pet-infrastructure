@@ -62,13 +62,13 @@ then
   sleep 15s
 fi
 
-if !(  kubectl get pods -o jsonpath='{range .items[*]}{.status.containerStatuses[*].ready.true}{.metadata.name}{ "\n"}{end}' | grep -q elasticsearch )
-then
-  echo "Installing eck stack"
-  kubectl create -f https://download.elastic.co/downloads/eck/2.5.0/crds.yaml
-  kubectl apply -f https://download.elastic.co/downloads/eck/2.5.0/operator.yaml
-  sleep 150s
-  eck_stack=$(find . -type d -iname "elastic-eck")
-  kubectl apply -f "${eck_stack}/fleet-manager-stack.yml"
-  kubectl apply -f "${eck_stack}/ingress.yml"
-fi
+# if !(  kubectl get pods -o jsonpath='{range .items[*]}{.status.containerStatuses[*].ready.true}{.metadata.name}{ "\n"}{end}' | grep -q elasticsearch )
+# then
+#   echo "Installing eck stack"
+#   kubectl create -f https://download.elastic.co/downloads/eck/2.5.0/crds.yaml
+#   kubectl apply -f https://download.elastic.co/downloads/eck/2.5.0/operator.yaml
+#   sleep 150s
+#   eck_stack=$(find . -type d -iname "elastic-eck")
+#   kubectl apply -f "${eck_stack}/fleet-manager-stack.yml"
+#   kubectl apply -f "${eck_stack}/ingress.yml"
+# fi
